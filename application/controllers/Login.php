@@ -8,11 +8,6 @@ class Login extends CI_Controller{
         $this->load->view('login-view'); // Carrega a view de login
     }
 
-    public function cadastro(){
-
-        $this->load->controller('SmpCadastro'); // Chama o Controller resposável pelo cadastro
-    }
-
     public function home(){
 
       $this->load->view('home-view');
