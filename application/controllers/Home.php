@@ -5,6 +5,6 @@ class Home extends CI_Controller{
 
     public function index(){
 
-        $this->load->view('home-view'); // Carrega a view de login
+        $this->load->view('saida-presos-view'); // Carrega a view de login
     }
 }

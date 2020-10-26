@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SMT | Home</title>
+  <title>SMT | Saída de detentos da CP</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -158,7 +158,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
     
-        <h1><p>SAÍDA DE DETENTOS DA CADEIA PÚBLICA</p></h1>
+        <h1><p>SAÍDA DE DETENTOS DA CP</p></h1>
         <p></p>
 
       <!-- Main content -->
@@ -172,7 +172,7 @@
                 </div>
                 <div class="col-sm-6">
                   <div id="example1_filter" class="dataTables_filter">
-                  <label>Procurar Detento:<input type="search" class="form-control input-sm" placeholder="" aria-controls="example1"></label>
+                  <label>Procurar Detento:<input type="search" class="form-control input-sm" placeholder="Nome, Mãe ou SIAP " aria-controls="example1"></label>
                   </div>
                 </div>
               </div>
@@ -180,7 +180,7 @@
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Cadeia Pública</th>
+                  <th>CP</th>
                   <th>Nome</th>
                   <th>Mãe</th>
                   <th>Pai</th>
@@ -231,15 +231,7 @@
 
                 </tfoot>
               </table>
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="dataTables_length" id="example1_length">
-                </div>
-                <div class="col-sm-6">
-                  <div id="example1_filter" class="dataTables_filter">
-                  <button type="button" class="btn btn-primary btn-flat">Cadastrar Saída</button>
-                  </div>
-                </div>
+               </div>
               </div>
             </div>
             <!-- /.box-body -->
