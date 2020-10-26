@@ -280,6 +280,12 @@
                   <textarea class="form-control" rows="5" placeholder="Observações"></textarea>
             </div>
 
+            <br>
+
+            <div class="col-xs-2"> <!--Botão Cadastrar-->
+              <a href="<?php echo site_url(''); ?>" class="btn btn-primary btn-block btn-flat" type="submit">Cadastrar</a>
+            </div>
+
           </form>
           <!--Fim do Formulario-->
         </div>
