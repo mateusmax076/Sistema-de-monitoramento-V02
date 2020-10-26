@@ -166,6 +166,16 @@
 
             <!-- /.box-header -->
             <div class="box-body">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="dataTables_length" id="example1_length">
+                </div>
+                <div class="col-sm-6">
+                  <div id="example1_filter" class="dataTables_filter">
+                  <label>Procurar Detento:<input type="search" class="form-control input-sm" placeholder="" aria-controls="example1"></label>
+                  </div>
+                </div>
+              </div>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -221,6 +231,16 @@
 
                 </tfoot>
               </table>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="dataTables_length" id="example1_length">
+                </div>
+                <div class="col-sm-6">
+                  <div id="example1_filter" class="dataTables_filter">
+                  <button type="button" class="btn btn-primary btn-flat">Cadastrar Saída</button>
+                  </div>
+                </div>
+              </div>
             </div>
             <!-- /.box-body -->
           </div>
