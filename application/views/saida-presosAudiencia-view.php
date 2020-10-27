@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SMT | Saída de detentos da CP</title>
+  <title>SMT | Saída de Detento para Audiência</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -158,7 +158,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
     
-        <h1><p>SAÍDA DE DETENTOS DA CP</p></h1>
+        <h1><p>SAÍDA DE DETENTO PARA AUDIÊNCIA</p></h1>
         <p></p>
 
       <!-- Main content -->
@@ -182,17 +182,11 @@
                   <th>ID</th>
                   <th>CP</th>
                   <th>Nome</th>
-                  <th>Mãe</th>
-                  <th>Pai</th>
-                  <th>Motivo</th>
-                  <th>Data Saída</th>
-                  <th>Nº Processo</th>
                   <th>Nº SIAP</th>
                   <th>SIC</th>
-                  <th>Documentação</th>
-                  <th>Destino</th>
+                  <th>Data</th>
+                  <th>Cidade - Fórum</th>
                   <th>Condutores</th>
-                  <th>Obs</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -200,33 +194,21 @@
 <!-- Id -->       <td>1</td>
 <!-- CP -->       <td>CP Carpina</td>
 <!-- Nome -->     <td><a href="tela de edição">Felipe Henrique Moura Canuto</a></td>
-<!-- Mãe -->      <td>Josefina Moura da Silva</td>
-<!-- Pai -->      <td>Teste</td>
-<!--Motivo-->     <td>Fuga</td>
-<!--Data Saida--> <td>23/10/2020</td>
-<!--Processo-->   <td>143456</td>
 <!--SIAP-->       <td>129401</td>
 <!--SIC-->        <td>123491</td>
-<!--Documento-->  <td>xxxxxx</td>
-<!--Destino-->    <td>CP Afrânio</td>
+<!--Data-->       <td>23/01/2019</td>
+<!--Cidade -->    <td>Olinda</td>
 <!--Condutores--> <td>PCPE</td>
-<!--Observação--> <td>XXXX</td>
                 </tr>
 
-                <td>2</td>
+                  <td>2</td>
                   <td>CP Timbauba</td>
                   <td><a href="tela de edição">Zaqueu Souza</a></td>
-                  <td>Teste</td>
-                  <td>Teste</td>
-                  <td>Evasão</td>
-                  <td>21/4/2019</td>
-                  <td>123456</td>
                   <td>129404</td>
                   <td>192910</td>
-                  <td>xxxxxx</td>
-                  <td>CP Afrânio</td>
+                  <td>22/12/2018</td>
+                  <td>Recife</td>
                   <td>PCPE</td>
-                  <td>xxxxx</td>
                 </tr>
 
                 </tfoot>
