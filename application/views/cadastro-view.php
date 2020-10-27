@@ -31,32 +31,32 @@
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Registrar um novo Agente</p>
+    <p class="login-box-msg">Registrar um novo Agente</p><!--Foi adicionado o 'name='-->
 
-    <form action="../../index.html" method="post"><!--Falta correção -->
+    <form method="post" action="<?php echo site_url('Cadastro/create')?>"><!--Em Testes | chama o controller responsavel por cadastro-->
 
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Nome Completo"><!--Falta correção -->
+      <input type="text" required="required" class="form-control" name="nomecompleto" placeholder="Nome Completo"><!--Em Testes --><!--Foi adicionado o 'name='-->
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
 
       <div class="form-group has-feedback">
-        <input type="int" class="form-control" placeholder="Matricula" maxlength="7"><!--Falta correção -->
+      <input type="int" required="required" class="form-control" name="matricula" maxlength="7" placeholder="Matricula"><!--Em Testes --><!--Foi adicionado o 'name='-->
         <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
       </div>
 
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Núcleo"><!--Falta correção -->
+      <input type="text" required="required" class="form-control" name="nucleo" placeholder="Núcleo"><!--Em Testes --><!--Foi adicionado o 'name='-->
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div>
 
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Unidade Prisional"><!--Falta correção -->
+      <input type="text" required="required" class="form-control" name="unidadeprisional" placeholder="Unidade Prisional"><!--Em Testes --><!--Foi adicionado o 'name='-->
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div>
 
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="E-mail Institucional"><!--Falta correção -->
+      <input type="email" required="required" class="form-control" name="emailinstitucional" placeholder="E-mail Institucional"><!--Em Testes --><!--Foi adicionado o 'name='-->
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
 

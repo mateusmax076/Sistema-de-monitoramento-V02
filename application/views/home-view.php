@@ -128,7 +128,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-key"></i> Saída da Cadeia Pública</a></li>
+            <li><a href="<?php echo site_url('Saidapresos'); ?>"><i class="fa fa-key"></i> Saída da Cadeia Pública</a></li>
             <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-cab"></i> Saída para Audiência</a></li>
             <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-ambulance"></i> Saída Médica</a></li>
           </ul>

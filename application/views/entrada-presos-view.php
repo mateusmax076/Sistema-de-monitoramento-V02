@@ -183,10 +183,10 @@
         <!--Inicio do Box Body-->
         <div class="box-body">
           <!--Inicio do Formulario-->
-          <form role="form">
+          <form role="form" method="post" action="<?php echo site_url('CadastroPresos/create')?>"><!--Em Testes | chama o controller responsavel por cadastro-->
           	<div class="form-group"> <!--Campo Cadeia Publica-->
           			<label>Cadeia Publica</label>
-          			<select class="form-control" style="width: 200px">
+          			<select class="form-control" style="width: 200px" name="cadeiapublica"><!-- 'name=' adicionado-->
           				<option>CP de Aliança</option>
           				<option>CP de Carpina</option>
           				<option>CP de Glória do Goitá</option>
@@ -202,27 +202,27 @@
 
             <div class="form-group">
               <label>Data de Entrada</label>
-                <input type="text" class="form-control" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10">
+              <input type="text" class="form-control" name="dataentrada" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
               </div>
 
           	<div class="form-group"> <!-- Nome do Detento-->
           		<label>Nome</label>
-          		<input type="text" class="form-control" placeholder="Nome" style="width:300px">
+          		<input type="text" class="form-control" name="nome" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
           	</div>
 
           	<div class="form-group"> <!-- Nome da Mãe-->
           		<label>Nome da Mãe</label>
-          		<input type="text" class="form-control" placeholder="Nome da Mãe" style="width:300px">
+          		<input type="text" class="form-control" name="nomemae" placeholder="Nome da Mãe" style="width:300px"><!-- 'name=' adicionado-->
           	</div>
 
           	<div class="form-group"> <!-- Nome do Pai-->
           		<label>Nome do Pai</label>
-          		<input type="text" class="form-control" placeholder="Nome" style="width:300px">
+          		<input type="text" class="form-control" name="nomepai" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
           	</div>
 
             <div class="form-group"> <!--Motivo-->
                 <label>Motivo</label>
-                <select class="form-control" style="width: 250px">
+                <select class="form-control" style="width: 250px" name="motivo"><!-- 'name=' adicionado-->
                   <option>Expiração de Prazo</option>
                   <option>Mandado de Prisão Civil</option>
                   <option>Mandado de Prisão Preventiva</option>
@@ -236,28 +236,28 @@
             </div>
 
             <div class="form-group"> <!--Origem-->
-                <label>Origem</label>
-                <select class="form-control" style="width: 250px">
-                  <option>Expiração de Prazo</option>
-                  <option>Mandado de Prisão Civil</option>
-                  <option>Mandado de Prisão Preventiva</option>
-                  <option>Mandado de Prisão Temporária</option>
-                  <option>Mandado de Recolhimento</option>
-                  <option>Recaptura - Mandado de Prisão</option>
-                  <option>Transferência</option>
-                  <option>Trânsito</option>
-                  <option>Outros</option>
+              <label>Origem</label><!-- Origem alterada para ficar de acordo com documentação, versão antiga estava com os options errados-->
+                <select class="form-control" style="width: 250px" name="origem"><!-- 'name=' adicionado-->
+                  <option>CP de Altinho</option>
+                  <option>CP de Bom Conselho</option> 
+                  <option>CP de Carpina</option>
+                  <option>CP de Glória do Goitá</option>
+                  <option>CP de Lagoa do Carro</option>
+                  <option>Delegacia - PC</option>
+                  <option>Outra UF</option>
+                  <option>Polícia Militar</option>
+                  <option>Outra Origem</option>
                 </select>
             </div>
 
             <div class="form-group"> <!--Data de Prisão-->
           		<label>Data da Prisão</label>
-          		<input type="text" class="form-control" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10">
+          		<input type="text" class="form-control" name="dataprisao" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
           	</div>
 
             <div class="form-group"> <!--Documentação-->
                 <label>Documentação</label>
-                <select class="form-control" style="width: 230px">
+                <select class="form-control" style="width: 230px" name="documentacao"><!-- 'name=' adicionado-->
                   <option>Auto de Prisão em Flagrante</option>
                   <option>Mandado de Prisão</option>
                   <option>Mandado de Recolhimento</option>
@@ -269,7 +269,7 @@
 
             <div class="form-group"> <!--Crime de Repercussão-->
                 <label>Crime de Repercussão</label>
-                <select class="form-control" style="width: 90px">
+                <select class="form-control" style="width: 90px" name="crimerepercurssao"><!-- 'name=' adicionado-->
                   <option>Sim</option>
                   <option>Não</option>
                 </select>
@@ -277,13 +277,13 @@
 
             <div class="form-group"> <!--Observações-->
                   <label>Observações Gerais</label>
-                  <textarea class="form-control" rows="5" placeholder="Observações"></textarea>
+                  <textarea class="form-control" rows="5" name="observacoesgerais" placeholder="Observações"></textarea><!-- 'name=' adicionado-->
             </div>
 
             <br>
 
             <div class="col-xs-2"> <!--Botão Cadastrar-->
-              <a href="<?php echo site_url(''); ?>" class="btn btn-primary btn-block btn-flat" type="submit">Cadastrar</a>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button><!--Botão atualizado pq não estav fazendo o 'submit'-->
             </div>
 
           </form>
