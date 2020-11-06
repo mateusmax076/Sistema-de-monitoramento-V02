@@ -12,13 +12,11 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/Ionicons/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/skins/_all-skins.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -168,81 +166,133 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Lista de Detentos</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>CP</th>
-                  <th>Nome</th>
-                  <th>Nome da Mãe</th>
-                  <th>Nome do Pai</th>
-                  <th>CSS grade</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>eisc</td>
-                  <td>NetFront 3.1</td>
-                  <td>Embedded devices</td>
-                  <td>-</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>disc</td>
-                  <td>NetFront 3.4</td>
-                  <td>Embedded devices</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>cisc</td>
-                  <td>Dillo 0.8</td>
-                  <td>Embedded devices</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>bisc</td>
-                  <td>Links</td>
-                  <td>Text only</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>aisc</td>
-                  <td>Lynx</td>
-                  <td>Text only</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
-                </tr>
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.box-body -->
+
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Cadastro</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                    title="Collapse">
+              <i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fa fa-times"></i></button>
           </div>
-          <!-- /.box -->
         </div>
-        <!-- /.col -->
+        <!--Inicio do Box Body-->
+        <div class="box-body">
+          <!--Inicio do Formulario-->
+          <form role="form" method="post" action="<?php echo site_url('CadastroPresos/create')?>"><!--Em Testes | chama o controller responsavel por cadastro-->
+          	<div class="form-group"> <!--Campo Cadeia Publica-->
+          			<label>Cadeia Publica</label>
+          			<select class="form-control" style="width: 200px" name="cadeiapublica"><!-- 'name=' adicionado-->
+          				<option>CP de Aliança</option>
+          				<option>CP de Carpina</option>
+          				<option>CP de Glória do Goitá</option>
+          				<option>CP de Goiana</option>
+          				<option>CP de Itambé</option>
+          				<option>CP de Lagoa do Carro</option>
+          				<option>CP de Macaparana</option>
+          				<option>CP de Nazaré da Mata</option>
+          				<option>CP de Timbauba</option>
+          				<option>CP de Vicência</option>
+          			</select>
+          	</div>
+
+            <div class="form-group">
+              <label>Data de Entrada</label>
+              <input type="text" class="form-control" name="dataentrada" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
+              </div>
+
+          	<div class="form-group"> <!-- Nome do Detento-->
+          		<label>Nome</label>
+          		<input type="text" class="form-control" name="nome" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
+          	</div>
+
+          	<div class="form-group"> <!-- Nome da Mãe-->
+          		<label>Nome da Mãe</label>
+          		<input type="text" class="form-control" name="nomemae" placeholder="Nome da Mãe" style="width:300px"><!-- 'name=' adicionado-->
+          	</div>
+
+          	<div class="form-group"> <!-- Nome do Pai-->
+          		<label>Nome do Pai</label>
+          		<input type="text" class="form-control" name="nomepai" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
+          	</div>
+
+            <div class="form-group"> <!--Motivo-->
+                <label>Motivo</label>
+                <select class="form-control" style="width: 250px" name="motivo"><!-- 'name=' adicionado-->
+                  <option>Expiração de Prazo</option>
+                  <option>Mandado de Prisão Civil</option>
+                  <option>Mandado de Prisão Preventiva</option>
+                  <option>Mandado de Prisão Temporária</option>
+                  <option>Mandado de Recolhimento</option>
+                  <option>Recaptura - Mandado de Prisão</option>
+                  <option>Transferência</option>
+                  <option>Trânsito</option>
+                  <option>Outros</option>
+                </select>
+            </div>
+
+            <div class="form-group"> <!--Origem-->
+              <label>Origem</label><!-- Origem alterada para ficar de acordo com documentação, versão antiga estava com os options errados-->
+                <select class="form-control" style="width: 250px" name="origem"><!-- 'name=' adicionado-->
+                  <option>CP de Altinho</option>
+                  <option>CP de Bom Conselho</option> 
+                  <option>CP de Carpina</option>
+                  <option>CP de Glória do Goitá</option>
+                  <option>CP de Lagoa do Carro</option>
+                  <option>Delegacia - PC</option>
+                  <option>Outra UF</option>
+                  <option>Polícia Militar</option>
+                  <option>Outra Origem</option>
+                </select>
+            </div>
+
+            <div class="form-group"> <!--Data de Prisão-->
+          		<label>Data da Prisão</label>
+          		<input type="text" class="form-control" name="dataprisao" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
+          	</div>
+
+            <div class="form-group"> <!--Documentação-->
+                <label>Documentação</label>
+                <select class="form-control" style="width: 230px" name="documentacao"><!-- 'name=' adicionado-->
+                  <option>Auto de Prisão em Flagrante</option>
+                  <option>Mandado de Prisão</option>
+                  <option>Mandado de Recolhimento</option>
+                  <option>Ofício de Transferência</option>
+                  <option>Prisão Temporária</option>
+                  <option>Outro</option>
+                </select>
+            </div>
+
+            <div class="form-group"> <!--Crime de Repercussão-->
+                <label>Crime de Repercussão</label>
+                <select class="form-control" style="width: 90px" name="crimerepercurssao"><!-- 'name=' adicionado-->
+                  <option>Sim</option>
+                  <option>Não</option>
+                </select>
+            </div>
+
+            <div class="form-group"> <!--Observações-->
+                  <label>Observações Gerais</label>
+                  <textarea class="form-control" rows="5" name="observacoesgerais" placeholder="Observações"></textarea><!-- 'name=' adicionado-->
+            </div>
+
+            <br>
+
+            <div class="col-xs-2"> <!--Botão Cadastrar-->
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button><!--Botão atualizado pq não estav fazendo o 'submit'-->
+            </div>
+
+          </form>
+          <!--Fim do Formulario-->
+        </div>
+        <!-- Fim do Box Body -->
       </div>
-      <!-- /.row -->
+      <!-- Fim do Box -->
     </section>
-    <!-- /.content -->
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -259,9 +309,6 @@
 <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="<?php echo base_url(); ?>assets/datatables.net-bs/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="<?php echo base_url(); ?>assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
@@ -273,16 +320,8 @@
 <!--Font Awesome My Link-->
 <script src="https://kit.fontawesome.com/3db1420b56.js" crossorigin="anonymous"></script>
 <script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
+  $(document).ready(function () {
+    $('.sidebar-menu').tree();
   })
 </script>
 </body>
