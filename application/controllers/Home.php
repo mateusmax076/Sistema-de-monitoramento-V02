@@ -7,4 +7,9 @@ class Home extends CI_Controller{
 
         $this->load->view('home-view'); // Carrega a view de login
     }
+
+    public function entradaPresos(){
+
+      $this->load->view('entrada-presos-view');
+    }
 }
