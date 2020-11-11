@@ -34,13 +34,13 @@
         <div class="login-box-body">
             <p class="login-box-msg">Faça o login para iniciar sua sessão</p>
 
-            <form action="<?php echo base_url('Login'); ?>" method="post"><!--Falta correção -->
+            <form action="<?php echo site_url('Login/verifica'); ?>" method="post"><!--Falta correção -->
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Login">
+                    <input type="text" class="form-control" name="login" placeholder="Login">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span><!--Falta correção -->
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Senha">
+                    <input type="password" class="form-control" name="senha" placeholder="Senha">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span><!--Falta correção -->
                 </div>
                 <div class="row">
@@ -50,7 +50,7 @@
 
                     <!-- /.col -->
                     <div class="col-xs-4">
-                      <a href="<?php echo site_url('Home'); ?>" class="btn btn-primary btn-block btn-flat" type="submit">Entrar</a>
+                     <button class="btn btn-primary btn-block btn-flat" type="submit">Entrar</button>
                     </div>
                     <!-- /.col -->
                 </div>

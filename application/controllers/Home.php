@@ -12,4 +12,7 @@ class Home extends CI_Controller{
 
       $this->load->view('entrada-presos-view');
     }
+        
+    
+    
 }
