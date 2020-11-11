@@ -98,7 +98,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo site_url('Login/entradaPresos'); ?> ">
+          <a href="<?php echo site_url('Home/entradaPresos'); ?> ">  <!--  Estava com o controller errado   -->
             <i class="fa fa-user-plus"></i>
             <span>Entrada de Detentos</span>
           </a>

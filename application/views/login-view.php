@@ -50,7 +50,7 @@
 
                     <!-- /.col -->
                     <div class="col-xs-4">
-                     <button class="btn btn-primary btn-block btn-flat" type="submit">Entrar</button>
+                     <button class="btn btn-primary btn-block btn-flat" type="submit">Entrar</button> <!-- alterado para enviar os dados -->
                     </div>
                     <!-- /.col -->
                 </div>
