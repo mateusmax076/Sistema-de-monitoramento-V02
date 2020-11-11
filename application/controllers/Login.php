@@ -33,7 +33,7 @@ class Login extends CI_Controller{
       //exit();
 
       //$this->output->enable_profiler(TRUE);  // exibe erros serve como debug
-      redirect("Home");
+      redirect("Home"); // se quissar testar a session coloca : redirect("Home/admin")
     }else{
       $this->session->sess_destroy();
       redirect("Login");
