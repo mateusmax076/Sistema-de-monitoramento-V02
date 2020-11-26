@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SMT | Entrada de Detentos</title>
+  <title>SMT | Saída de detentos da CP</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/Ionicons/css/ionicons.min.css">
+  <!--DataTables-->
+  <script src="<?php echo base_url(); ?>assets/plugins/datatables/dataTables.bootstrap.css"></script>
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -96,7 +98,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo site_url('Login/entradaPresos'); ?> ">
+          <a href="<?php echo site_url('Home/entradaPresos'); ?> "> <!--  Estava com o controller errado   -->
             <i class="fa fa-user-plus"></i>
             <span>Entrada de Detentos</span>
           </a>
@@ -111,7 +113,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo site_url('Ocorrencias'); ?>"><i class="fa fa-registered"></i> Registro de Ocorrências </a></li>
-            <li><a href="<?php echo site_url('Apreensoes'); ?>"><i class="fa fa-ban"></i> Revistas e Apreensões </a></li>
+            <li><a href="<?php echo site_url('revistas-e-apreensoes-view'); ?>"><i class="fa fa-ban"></i> Revistas e Apreensões </a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -130,7 +132,7 @@
         <li class="treeview">
           <a href="<?php echo site_url('Home'); ?>">
             <i class="fa fa-user-times"></i>
-            <span>Saida do Detento</span>
+            <span>Saída de Detentos</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -154,47 +156,26 @@
           </ul>
         </li>
     </section>
-    <!-- /.sidebar -->
   </aside>
 
   <!-- =============================================== -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Cabeçalho da Página -->
+    <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Entrada de Detentos
-      </h1>
-      <ol class="breadcrumb"> <!--Area referente ao Mapa de navegação do site (Precisa de melhorias)-->
-        <li><a href="<?php echo site_url('Home'); ?>">Home</a></li>
-        <li class="active">Entrada de Detentos</li>
-      </ol>
-    </section>
+    
+        <h1><p>REVISTAS E APREENSÕES</p></h1>
+        <p></p>
 
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
+      <!-- Main content -->
       <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Cadastro</h3>
 
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
-        </div>
-        <!--Inicio do Box Body-->
-        <div class="box-body">
-          <!--Inicio do Formulario-->
-          <form role="form" method="post" action="<?php echo site_url('CadastroPresos/create')?>"><!--Em Testes | chama o controller responsavel por cadastro-->
-          	<div class="form-group"> <!--Campo Cadeia Publica-->
-          			<label>Cadeia Publica</label>
-          			<select class="form-control" style="width: 200px" name="cadeiapublica"><!-- 'name=' adicionado-->
+            <!-- /.box-header -->
+
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <label>Centro Prisional</label><select class="form-control" style="width: 200px" name="cadeiapublica"><!-- 'name=' adicionado-->
           				<option>CP de Aliança</option>
           				<option>CP de Carpina</option>
           				<option>CP de Glória do Goitá</option>
@@ -206,130 +187,106 @@
           				<option>CP de Timbauba</option>
           				<option>CP de Vicência</option>
           			</select>
-          	</div>
+                <tr>
+                  <th>Itens Apreendidos</th>
+                  <th>QTD</th>
+                  <th>Itens Apreendidos</th>
+                  <th>QTD<button class="btn btn-primary btn-xs pull-right">Registrar</button></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>Armas artesanais - Branca</td>
+                <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                <td>Chips de celular</td>
+                <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                </tr>
+                <tr>
+                  <td>Armas artesanais - Fogo</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                  <td>Cocaína</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                </tr>
+                   <tr>
+                  <td>Armas industriais - Branca</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                  <td>Cola de sapateiro</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                </tr>
+                <tr>
+                  <td>Armas industriais - Fogo</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                  <td>Corda artesanal</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                </tr>
+                <tr>
+                  <td>Bateria de celular</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                  <td>Crack</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                </tr>
+                <tr>
+                  <td>Bebida artesanal</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                  <td>Maconha</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                </tr>
+                   <tr>
+                  <td>Bebida industrial</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                  <td>Medicação Psicotrópicos</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                </tr>
+                <tr>
+                  <td>Carregador celular</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                  <td>Munições</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                </tr>
+                <tr>
+                  <td>Celular</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
+                  <td>Outro</td>
+                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Quantidade" style="width:100px " maxlength="10"></td>
 
-            <div class="form-group">
-              <label>Data de Entrada</label>
-              <input type="text" class="form-control" name="dataentrada" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
-              </div>
+                </tr>
 
-          	<div class="form-group"> <!-- Nome do Detento-->
-          		<label>Nome</label>
-          		<input type="text" class="form-control" name="nome" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
-          	</div>
-
-          	<div class="form-group"> <!-- Nome da Mãe-->
-          		<label>Nome da Mãe</label>
-          		<input type="text" class="form-control" name="nomemae" placeholder="Nome da Mãe" style="width:300px"><!-- 'name=' adicionado-->
-          	</div>
-
-          	<div class="form-group"> <!-- Nome do Pai-->
-          		<label>Nome do Pai</label>
-          		<input type="text" class="form-control" name="nomepai" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
-          	</div>
-
-            <div class="form-group"> <!--Motivo-->
-                <label>Motivo</label>
-                <select class="form-control" style="width: 250px" name="motivo"><!-- 'name=' adicionado-->
-                  <option>Expiração de Prazo</option>
-                  <option>Mandado de Prisão Civil</option>
-                  <option>Mandado de Prisão Preventiva</option>
-                  <option>Mandado de Prisão Temporária</option>
-                  <option>Mandado de Recolhimento</option>
-                  <option>Recaptura - Mandado de Prisão</option>
-                  <option>Transferência</option>
-                  <option>Trânsito</option>
-                  <option>Outros</option>
-                </select>
-            </div>
-
-            <div class="form-group"> <!--Origem-->
-              <label>Origem</label><!-- Origem alterada para ficar de acordo com documentação, versão antiga estava com os options errados-->
-                <select class="form-control" style="width: 250px" name="origem"><!-- 'name=' adicionado-->
-                  <option>CP de Altinho</option>
-                  <option>CP de Bom Conselho</option> 
-                  <option>CP de Carpina</option>
-                  <option>CP de Glória do Goitá</option>
-                  <option>CP de Lagoa do Carro</option>
-                  <option>Delegacia - PC</option>
-                  <option>Outra UF</option>
-                  <option>Polícia Militar</option>
-                  <option>Outra Origem</option>
-                </select>
-            </div>
-
-            <div class="form-group"> <!--Data de Prisão-->
-          		<label>Data da Prisão</label>
-          		<input type="text" class="form-control" name="dataprisao" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
-          	</div>
-
-            <div class="form-group"> <!--Documentação-->
-                <label>Documentação</label>
-                <select class="form-control" style="width: 230px" name="documentacao"><!-- 'name=' adicionado-->
-                  <option>Auto de Prisão em Flagrante</option>
-                  <option>Mandado de Prisão</option>
-                  <option>Mandado de Recolhimento</option>
-                  <option>Ofício de Transferência</option>
-                  <option>Prisão Temporária</option>
-                  <option>Outro</option>
-                </select>
-            </div>
-
-            <div class="form-group"> <!--Crime de Repercussão-->
-                <label>Crime de Repercussão</label>
-                <select class="form-control" style="width: 90px" name="crimerepercurssao"><!-- 'name=' adicionado-->
-                  <option>Sim</option>
-                  <option>Não</option>
-                </select>
-            </div>
-
-            <div class="form-group"> <!--Observações-->
-                  <label>Observações Gerais</label>
-                  <textarea class="form-control" rows="5" name="observacoesgerais" placeholder="Observações"></textarea><!-- 'name=' adicionado-->
-            </div>
-
-            <br>
-
-            <div class="col-xs-2"> <!--Botão Cadastrar-->
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button><!--Botão atualizado pq não estav fazendo o 'submit'-->
-            </div>
-
-          </form>
-          <!--Fim do Formulario-->
+                
+              </table>
+          <!-- /.box -->
         </div>
-        <!-- Fim do Box Body -->
-      </div>
-      <!-- Fim do Box -->
-    </section>
-    <!-- /.content -->
+        
   </div>
-  <!-- /.content-wrapper -->
 
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.18
-    </div>
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-    reserved.
-  </footer>
+
+    <!-- /.content -->
+</div>
+
+  
+
+  
 
 <!-- jQuery 3 -->
 <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url(); ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/plugins/datatables/jquery.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="<?php echo base_url(); ?>assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url(); ?>assets/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>assets/dist/js/adminlte.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
 <!--Font Awesome My Link-->
 <script src="https://kit.fontawesome.com/3db1420b56.js" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function () {
-    $('.sidebar-menu').tree();
+    $('.sidebar-menu').tree()
   })
 </script>
 </body>
