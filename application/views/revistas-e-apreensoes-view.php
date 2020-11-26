@@ -113,21 +113,14 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo site_url('Ocorrencias'); ?>"><i class="fa fa-registered"></i> Registro de Ocorrências </a></li>
-            <li><a href="<?php echo site_url('revistas-e-apreensoes-view'); ?>"><i class="fa fa-ban"></i> Revistas e Apreensões </a></li>
+            <li><a href="<?php echo site_url('Apreensoes'); ?>"><i class="fa fa-ban"></i> Revistas e Apreensões </a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="<?php echo site_url('Home'); ?>">
+        <li>
+          <a href="<?php echo site_url('SemiAberto_e_Aberto'); ?> ">
             <i class="fa fa-file-text-o"></i>
-            <span>Relação</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <span>Relação Aberto / Semi-Aberto</span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-unlock"></i> Aberto </a></li>
-            <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-unlock-alt"></i> Semi-Aberto </a></li>
-          </ul>
         </li>
         <li class="treeview">
           <a href="<?php echo site_url('Home'); ?>">

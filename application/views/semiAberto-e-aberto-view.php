@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SMT | Registro de Ocorrências</title>
+  <title>SMT |Relação Semi-aberto e aberto </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -149,6 +149,7 @@
           </ul>
         </li>
     </section>
+    <!-- /.sidebar -->
   </aside>
 
   <!-- =============================================== -->
@@ -158,113 +159,71 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
     
-        <h1><p>REGISTRO DE OCORRÊNCIAS </p></h1>
+        <h1><p>RELAÇÃO SEMI-ABERTO E ABERTO</p></h1>
         <p></p>
 
       <!-- Main content -->
       <div class="box">
 
             <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="dataTables_length" id="example1_length">
+                </div>
+                <div class="col-sm-6">
+                  <div id="example1_filter" class="dataTables_filter">
+                  <label>Procurar Detento:<input type="search" class="form-control input-sm" placeholder="Nome, Mãe ou SIAP " aria-controls="example1"></label>
+                  </div>
+                </div>
+              </div>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Data</th>
+                  <th>ID</th>
                   <th>CP</th>
-                  <th>Resumo da Ocorrência</th>
-                  <th>Tipo</th>
-                  <th>Ações</td>
+                  <th>Nome</th>
+                  <th>Nº SIAP</th>
+                  <th>SIC</th>
+                  <th>Regime</th>
+                  <th>Obs</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td><input type="text" class="form-control" name="dataentrada" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"></td>
-                  <td>
-                    <select class="form-control" style="width: 200px" name="cadeiapublica"><!-- 'name=' adicionado-->
-                    <option>CP de Aliança</option>
-                    <option>CP de Carpina</option>
-                    <option>CP de Glória do Goitá</option>
-                    <option>CP de Goiana</option>
-                    <option>CP de Itambé</option>
-                    <option>CP de Lagoa do Carro</option>
-                    <option>CP de Macaparana</option>
-                    <option>CP de Nazaré da Mata</option>
-                    <option>CP de Timbauba</option>
-                    <option>CP de Vicência</option> 
-                    </select>
-                  </td>
-                  <td><input type="text" class="form-control" name="resumoentrada" placeholder="Max: 200 caracteres" style="width:140px height:67px " maxlength="250"></td>
-                  <td>
-                    <select class="form-control" style="width: 200px" name="tipoOcorrencia"><!-- 'name=' adicionado-->
-                      <option>Agressão</option>
-                      <option>Apreensão</option>
-                      <option>Custódia Hospitalar</option>
-                      <option>Emergência Hospitalar</option>
-                      <option>Fuga</option>
-                      <option>Motim</option>
-                      <option>Óbito - Natural</option>
-                      <option>Óbito - Suicídio</option>
-                      <option>Óbito CVLI</option>
-                      <option>Rebelião</option> 
-                      <option>Tumulto</option>
-                      <option>Outro</option> 
-                    </select>
-                  </td>
-                  <td class="sorting_1">
-                     <a href="#" class="btn btn-success btn-xs">Salvar</a>                    
-                  </td>
+<!-- Id -->       <td>1</td>
+<!-- CP -->       <td>CP Carpina</td>
+<!-- Nome -->     <td><a href="tela de edição">Felipe Henrique Moura Canuto</a></td>
+<!--SIAP-->       <td>129401</td>
+<!--SIC-->        <td>123491</td>
+<!--Regime-->     <td>Aberto</td>
+<!--OBS-->        <td><a href="link"> Link obs</td>
+
                 </tr>
-                <tr>
-                  <td><input type="text" class="form-control" name="dataentrada" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"></td>
-                  <td>
-                    <select class="form-control" style="width: 200px" name="cadeiapublica"><!-- 'name=' adicionado-->
-                      <option>CP de Aliança</option>
-                      <option>CP de Carpina</option>
-                      <option>CP de Glória do Goitá</option>
-                      <option>CP de Goiana</option>
-                      <option>CP de Itambé</option>
-                      <option>CP de Lagoa do Carro</option>
-                      <option>CP de Macaparana</option>
-                      <option>CP de Nazaré da Mata</option>
-                      <option>CP de Timbauba</option>
-                      <option>CP de Vicência</option>
-                    </select>
-                 </td>
-                  <td>
-                  <input type="text" class="form-control" name="resumoentrada" placeholder="Max: 200 caracteres" style="width:140px height:67px " maxlength="250">
-                  <td>
-                    <select class="form-control" style="width: 200px" name="tipoOcorrencia"><!-- 'name=' adicionado-->
-                        <option>Agressão</option>
-                        <option>Apreensão</option>
-                        <option>Custódia Hospitalar</option>
-                        <option>Emergência Hospitalar</option>
-                        <option>Fuga</option>
-                        <option>Motim</option>
-                        <option>Óbito - Natural</option>
-                        <option>Óbito - Suicídio</option>
-                        <option>Óbito CVLI</option>
-                        <option>Rebelião</option> 
-                        <option>Tumulto</option>
-                        <option>Outro</option> 
-                      </select>
-                  </td>
-                  <td class="sorting_1">
-                     <a href="#" class="btn btn-success btn-xs">Salvar</a>                    
-                  </td>
-                  </tr>
+
+                  <td>2</td>
+                  <td>CP Timbauba</td>
+                  <td><a href="tela de edição">Zaqueu Souza</a></td>
+                  <td>129404</td>
+                  <td>192910</td>
+                  <td>Semi-Aberto</td>
+                  <td><a href="link"> Link obs</td>
+                </tr>
+
                 </tfoot>
               </table>
+               </div>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
           <!-- /.box -->
         </div>
-        
-  </div>
-
-
+  </div>  
+  </aside>
+    </section>
     <!-- /.content -->
-</div>
-
-  
-
-  
+  </div>
 
 <!-- jQuery 3 -->
 <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
