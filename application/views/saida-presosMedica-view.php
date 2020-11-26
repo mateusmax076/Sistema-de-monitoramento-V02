@@ -151,8 +151,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-refresh"></i> Trânsito Interno</a></li>
-            <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-exchange"></i> Trânsito Externo</a></li>
+            <li><a href="<?php echo site_url('TransitoInterno'); ?>"><i class="fa fa-refresh"></i> Trânsito Interno</a></li>
+            <li><a href="<?php echo site_url('TransitoExterno'); ?>"><i class="fa fa-exchange"></i> Trânsito Externo</a></li>
           </ul>
         </li>
     </section>

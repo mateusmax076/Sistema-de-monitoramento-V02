@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SMT | Saída de detentos da CP</title>
+  <title>SMT | Revistas e Apreensões</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -151,10 +151,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-refresh"></i> Trânsito Interno</a></li>
-            <li><a href="<?php echo site_url('Home'); ?>"><i class="fa fa-exchange"></i> Trânsito Externo</a></li>
+            <li><a href="<?php echo site_url('TransitoInterno'); ?>"><i class="fa fa-refresh"></i> Trânsito Interno</a></li>
+            <li><a href="<?php echo site_url('TransitoExterno'); ?>"><i class="fa fa-exchange"></i> Trânsito Externo</a></li>
           </ul>
-        </li>
+          </li>
     </section>
   </aside>
 
