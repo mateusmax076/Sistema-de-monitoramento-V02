@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SMT | Entrada de Detentos</title>
+  <title>SMT | Cadastro de Agentes</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -36,9 +36,9 @@
     <!-- Logo -->
     <a href="<?php echo site_url('Home'); ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>SMP</b></span>
+      <span class="logo-mini"><b>Admin</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>SMP</b></span>
+      <span class="logo-lg"><b>Admin</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -73,7 +73,7 @@
           <img src="" class="" alt=""> <!--Foto do Usuario, não pode tirar esse bloco se n quebra a view-->
         </div>
         <div class="pull-left info">
-          <p>Zaqueu Souza</p>
+          <p>Administrador</p>
         </div>
       </div>
       <!-- search form -->
@@ -93,6 +93,12 @@
         <li>
           <a href="<?php echo site_url('Home'); ?>"> <!-- Link do Home, ao ser clicado ele retorna o controller-->
             <i class="fa fa-home"></i> <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo site_url('Agente'); ?>"> <!-- Link do Home, ao ser clicado ele retorna o controller-->
+          <i class="fa fa-user-plus"></i>
+            <span>Agentes</span>
           </a>
         </li>
         <li>
@@ -157,11 +163,11 @@
     <!-- Cabeçalho da Página -->
     <section class="content-header">
       <h1>
-        Entrada de Detentos
+        Cadastro de Agentes
       </h1>
       <ol class="breadcrumb"> <!--Area referente ao Mapa de navegação do site (Precisa de melhorias)-->
         <li><a href="<?php echo site_url('Home'); ?>">Home</a></li>
-        <li class="active">Entrada de Detentos</li>
+        <li class="active">Cadastro de Agentes</li>
       </ol>
     </section>
 
@@ -182,114 +188,80 @@
           </div>
         </div>
         <!--Inicio do Box Body-->
-        <div class="box-body">
-          <!--Inicio do Formulario-->
-          <form role="form" method="post" action="<?php echo site_url('CadastroPresos/create')?>"><!--Em Testes | chama o controller responsavel por cadastro-->
-          	<div class="form-group"> <!--Campo Cadeia Publica-->
-          			<label>Cadeia Publica</label>
-          			<select class="form-control" style="width: 200px" name="cadeiapublica"><!-- 'name=' adicionado-->
-          				<option>CP de Aliança</option>
-          				<option>CP de Carpina</option>
-          				<option>CP de Glória do Goitá</option>
-          				<option>CP de Goiana</option>
-          				<option>CP de Itambé</option>
-          				<option>CP de Lagoa do Carro</option>
-          				<option>CP de Macaparana</option>
-          				<option>CP de Nazaré da Mata</option>
-          				<option>CP de Timbauba</option>
-          				<option>CP de Vicência</option>
-          			</select>
-          	</div>
+        <div class="register-box-body">
+    <p class="login-box-msg">Cadastrar um novo Agente</p><!--Foi adicionado o 'name='-->
 
-            <div class="form-group">
-              <label>Data de Entrada</label>
-              <input type="text" class="form-control" name="dataentrada" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
-              </div>
+    <form method="post" action="<?php echo site_url('Cadastro/createMaster')?>"><!--Em Testes | chama o controller responsavel por cadastro-->
 
-          	<div class="form-group"> <!-- Nome do Detento-->
-          		<label>Nome</label>
-          		<input type="text" class="form-control" name="nome" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
-          	</div>
+      <div class="form-group has-feedback">
+      <input type="text" required="required" class="form-control" name="nomecompleto" placeholder="Nome Completo"><!--Em Testes --><!--Foi adicionado o 'name='-->
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
 
-          	<div class="form-group"> <!-- Nome da Mãe-->
-          		<label>Nome da Mãe</label>
-          		<input type="text" class="form-control" name="nomemae" placeholder="Nome da Mãe" style="width:300px"><!-- 'name=' adicionado-->
-          	</div>
+      <div class="form-group has-feedback">
+      <input type="int" required="required" class="form-control" name="matricula" maxlength="7" placeholder="Matricula"><!--Em Testes --><!--Foi adicionado o 'name='-->
+        <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
+      </div>
 
-          	<div class="form-group"> <!-- Nome do Pai-->
-          		<label>Nome do Pai</label>
-          		<input type="text" class="form-control" name="nomepai" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
-          	</div>
+      <div class="form-group has-feedback">
+      <input type="text" required="required" class="form-control" name="nucleo" placeholder="Núcleo"><!--Em Testes --><!--Foi adicionado o 'name='-->
+        <span class="glyphicon glyphicon-home form-control-feedback"></span>
+      </div>
 
-            <div class="form-group"> <!--Motivo-->
-                <label>Motivo</label>
-                <select class="form-control" style="width: 250px" name="motivo"><!-- 'name=' adicionado-->
-                  <option>Expiração de Prazo</option>
-                  <option>Mandado de Prisão Civil</option>
-                  <option>Mandado de Prisão Preventiva</option>
-                  <option>Mandado de Prisão Temporária</option>
-                  <option>Mandado de Recolhimento</option>
-                  <option>Recaptura - Mandado de Prisão</option>
-                  <option>Transferência</option>
-                  <option>Trânsito</option>
-                  <option>Outros</option>
-                </select>
-            </div>
+      <div class="form-group has-feedback">
+      <input type="text" required="required" class="form-control" name="unidadeprisional" placeholder="Unidade Prisional"><!--Em Testes --><!--Foi adicionado o 'name='-->
+        <span class="glyphicon glyphicon-home form-control-feedback"></span>
+      </div>
 
-            <div class="form-group"> <!--Origem-->
-              <label>Origem</label><!-- Origem alterada para ficar de acordo com documentação, versão antiga estava com os options errados-->
-                <select class="form-control" style="width: 250px" name="origem"><!-- 'name=' adicionado-->
-                  <option>CP de Altinho</option>
-                  <option>CP de Bom Conselho</option> 
-                  <option>CP de Carpina</option>
-                  <option>CP de Glória do Goitá</option>
-                  <option>CP de Lagoa do Carro</option>
-                  <option>Delegacia - PC</option>
-                  <option>Outra UF</option>
-                  <option>Polícia Militar</option>
-                  <option>Outra Origem</option>
-                </select>
-            </div>
+      <div class="form-group has-feedback">
+      <input type="email" required="required" class="form-control" name="emailinstitucional" placeholder="E-mail Institucional"><!--Em Testes --><!--Foi adicionado o 'name='-->
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
 
-            <div class="form-group"> <!--Data de Prisão-->
-          		<label>Data da Prisão</label>
-          		<input type="text" class="form-control" name="dataprisao" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
-          	</div>
+      <div class="form-group has-feedback">
+      <input type="text" required="required" class="form-control" name="login" placeholder="Login"><!--Em Testes --><!--Foi adicionado o 'name='-->
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
 
-            <div class="form-group"> <!--Documentação-->
-                <label>Documentação</label>
-                <select class="form-control" style="width: 230px" name="documentacao"><!-- 'name=' adicionado-->
-                  <option>Auto de Prisão em Flagrante</option>
-                  <option>Mandado de Prisão</option>
-                  <option>Mandado de Recolhimento</option>
-                  <option>Ofício de Transferência</option>
-                  <option>Prisão Temporária</option>
-                  <option>Outro</option>
-                </select>
-            </div>
+      <div class="form-group has-feedback">
+      <input type="text" required="required" class="form-control" name="senha" placeholder="Senha"><!--Em Testes --><!--Foi adicionado o 'name='-->
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
 
-            <div class="form-group"> <!--Crime de Repercussão-->
-                <label>Crime de Repercussão</label>
-                <select class="form-control" style="width: 90px" name="crimerepercurssao"><!-- 'name=' adicionado-->
-                  <option>Sim</option>
-                  <option>Não</option>
-                </select>
-            </div>
+      <div class="form-group has-feedback">
+      <input type="text" required="required" class="form-control" name="funcao" placeholder="Função"><!--Em Testes --><!--Foi adicionado o 'name='-->
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
 
-            <div class="form-group"> <!--Observações-->
-                  <label>Observações Gerais</label>
-                  <textarea class="form-control" rows="5" name="observacoesgerais" placeholder="Observações"></textarea><!-- 'name=' adicionado-->
-            </div>
+      <div class="form-group has-feedback">
+      <input type="text" class="form-control" name="funcionarioativo" placeholder="Funcionario Ativo"><!--Em Testes --><!--Foi adicionado o 'name='-->
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
 
-            <br>
 
-            <div class="col-xs-2"> <!--Botão Cadastrar-->
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button><!--Botão atualizado pq não estav fazendo o 'submit'-->
-            </div>
 
-          </form>
-          <!--Fim do Formulario-->
+
+
+      <div class="row">
+        <div class="col-xs-3">
+
         </div>
+        <!-- /.col -->
+        <div class="col-xs-5">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button>
+        </div>
+
+
+
+
+        <!-- /.col -->
+      </div>
+    </form>
+
+
+
+    <a href="<?php echo site_url('Agente'); ?>" class="text-center"><br>Voltar</a> <!-- href=" ?php echo site_url(); ? => responsável por fazer a chamda do controller -->
+  </div>
         <!-- Fim do Box Body -->
       </div>
       <!-- Fim do Box -->

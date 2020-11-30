@@ -5,7 +5,7 @@ class Login extends CI_Controller{
 
   public function index(){
 
-    $this->session->sess_destroy(); // destroi a sessão 
+    //$this->session->sess_destroy(); // destroi a sessão 
 
     $this->load->view('login-view'); // Carrega a view de login
 
@@ -26,16 +26,31 @@ class Login extends CI_Controller{
       //OBS: #### SESSION ESTÃO SENDO CRIADAS EM VARIOS CONTROLLERS TEM QUE SER REVISTO PRA ENTENDER O QUE ESTÁ ACONTECENDO  ####
 
     if($user){
-      $this->session->set_userdata("logged_user", $user); //Estão sendo criadas duas session uma com os dados e a outra sem os dados
-      //print "<pre>";  //Print => qnd descomentados exibem na tela o que está contido na $_SESSION
-      //print_r($_SESSION);
-      //print "</pre>";
-      //exit();
+      $funcao = $user['funcao'];
 
-      //$this->output->enable_profiler(TRUE);  // exibe erros serve como debug
-      redirect("Home"); // se quissar testar a session coloca : redirect("Home/admin")
+      if($funcao){
+        $funcao == "admin";
+        redirect("Home/admin");
+      }else{
+
+        //print "<pre>";  //Print => qnd descomentados exibem na tela o que está contido na $_SESSION
+        //print_r($funcao);
+        //print "</pre>";
+        //exit();
+
+
+
+        //$this->session->set_userdata("logged_user", $user); //Estão sendo criadas duas session uma com os dados e a outra sem os dados
+        //print "<pre>";  //Print => qnd descomentados exibem na tela o que está contido na $_SESSION
+        //print_r($_SESSION);
+        //print "</pre>";
+        //exit();
+
+        //$this->output->enable_profiler(TRUE);  // exibe erros serve como debug
+        redirect("Home"); // se quissar testar a session coloca : redirect("Home/admin")
+      }
     }else{
-      $this->session->sess_destroy();
+      //$this->session->sess_destroy();
       redirect("Login");
     }
 

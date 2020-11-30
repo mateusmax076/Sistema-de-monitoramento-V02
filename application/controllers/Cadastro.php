@@ -18,4 +18,10 @@ class Cadastro extends CI_Controller{
         redirect('Login');
 
     }
+
+    public function createMaster(){ //Carrega a Função cadastroAgente que está no Agente_model
+        $this->Agente_model->cadastroAgenteMaster();
+        redirect('Agente');
+
+    }
 }

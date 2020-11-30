@@ -13,7 +13,7 @@ class CadastroPresos extends CI_Controller{
 
     public function create(){ // Chama a função responsável pelo cadastro dos presos ao banco de dados
         $this->Presos_model->cadastroPresos();
-        redirect('Login/entradaPresos');
+        redirect('Home/entradaPresos');
 
     }
 

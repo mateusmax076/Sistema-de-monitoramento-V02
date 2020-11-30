@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SMT | Entrada de Detentos</title>
+  <title>SMT | ADMIN </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -12,11 +12,13 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,9 +38,9 @@
     <!-- Logo -->
     <a href="<?php echo site_url('Home'); ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>SMP</b></span>
+      <span class="logo-mini"><b>Admin</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>SMP</b></span>
+      <span class="logo-lg"><b>Admin</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -73,7 +75,7 @@
           <img src="" class="" alt=""> <!--Foto do Usuario, não pode tirar esse bloco se n quebra a view-->
         </div>
         <div class="pull-left info">
-          <p>Zaqueu Souza</p>
+          <p>Administrador</p>
         </div>
       </div>
       <!-- search form -->
@@ -91,8 +93,14 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Principal</li>
         <li>
-          <a href="<?php echo site_url('Home'); ?>"> <!-- Link do Home, ao ser clicado ele retorna o controller-->
+          <a href="<?php echo site_url('Home/admin'); ?>"> <!-- Link do Home, ao ser clicado ele retorna o controller-->
             <i class="fa fa-home"></i> <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo site_url('Agente'); ?>"> <!-- Link do Home, ao ser clicado ele retorna o controller-->
+          <i class="fa fa-user-plus"></i>
+            <span>Agentes</span>
           </a>
         </li>
         <li>
@@ -157,142 +165,67 @@
     <!-- Cabeçalho da Página -->
     <section class="content-header">
       <h1>
-        Entrada de Detentos
+        Agentes
       </h1>
       <ol class="breadcrumb"> <!--Area referente ao Mapa de navegação do site (Precisa de melhorias)-->
         <li><a href="<?php echo site_url('Home'); ?>">Home</a></li>
-        <li class="active">Entrada de Detentos</li>
+        <li class="active">Agentes</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-
-      <!-- Default box -->
-      <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Cadastro</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
-        </div>
-        <!--Inicio do Box Body-->
-        <div class="box-body">
-          <!--Inicio do Formulario-->
-          <form role="form" method="post" action="<?php echo site_url('CadastroPresos/create')?>"><!--Em Testes | chama o controller responsavel por cadastro-->
-          	<div class="form-group"> <!--Campo Cadeia Publica-->
-          			<label>Cadeia Publica</label>
-          			<select class="form-control" style="width: 200px" name="cadeiapublica"><!-- 'name=' adicionado-->
-          				<option>CP de Aliança</option>
-          				<option>CP de Carpina</option>
-          				<option>CP de Glória do Goitá</option>
-          				<option>CP de Goiana</option>
-          				<option>CP de Itambé</option>
-          				<option>CP de Lagoa do Carro</option>
-          				<option>CP de Macaparana</option>
-          				<option>CP de Nazaré da Mata</option>
-          				<option>CP de Timbauba</option>
-          				<option>CP de Vicência</option>
-          			</select>
-          	</div>
-
-            <div class="form-group">
-              <label>Data de Entrada</label>
-              <input type="text" class="form-control" name="dataentrada" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
-              </div>
-
-          	<div class="form-group"> <!-- Nome do Detento-->
-          		<label>Nome</label>
-          		<input type="text" class="form-control" name="nome" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
-          	</div>
-
-          	<div class="form-group"> <!-- Nome da Mãe-->
-          		<label>Nome da Mãe</label>
-          		<input type="text" class="form-control" name="nomemae" placeholder="Nome da Mãe" style="width:300px"><!-- 'name=' adicionado-->
-          	</div>
-
-          	<div class="form-group"> <!-- Nome do Pai-->
-          		<label>Nome do Pai</label>
-          		<input type="text" class="form-control" name="nomepai" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
-          	</div>
-
-            <div class="form-group"> <!--Motivo-->
-                <label>Motivo</label>
-                <select class="form-control" style="width: 250px" name="motivo"><!-- 'name=' adicionado-->
-                  <option>Expiração de Prazo</option>
-                  <option>Mandado de Prisão Civil</option>
-                  <option>Mandado de Prisão Preventiva</option>
-                  <option>Mandado de Prisão Temporária</option>
-                  <option>Mandado de Recolhimento</option>
-                  <option>Recaptura - Mandado de Prisão</option>
-                  <option>Transferência</option>
-                  <option>Trânsito</option>
-                  <option>Outros</option>
-                </select>
-            </div>
-
-            <div class="form-group"> <!--Origem-->
-              <label>Origem</label><!-- Origem alterada para ficar de acordo com documentação, versão antiga estava com os options errados-->
-                <select class="form-control" style="width: 250px" name="origem"><!-- 'name=' adicionado-->
-                  <option>CP de Altinho</option>
-                  <option>CP de Bom Conselho</option> 
-                  <option>CP de Carpina</option>
-                  <option>CP de Glória do Goitá</option>
-                  <option>CP de Lagoa do Carro</option>
-                  <option>Delegacia - PC</option>
-                  <option>Outra UF</option>
-                  <option>Polícia Militar</option>
-                  <option>Outra Origem</option>
-                </select>
-            </div>
-
-            <div class="form-group"> <!--Data de Prisão-->
-          		<label>Data da Prisão</label>
-          		<input type="text" class="form-control" name="dataprisao" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
-          	</div>
-
-            <div class="form-group"> <!--Documentação-->
-                <label>Documentação</label>
-                <select class="form-control" style="width: 230px" name="documentacao"><!-- 'name=' adicionado-->
-                  <option>Auto de Prisão em Flagrante</option>
-                  <option>Mandado de Prisão</option>
-                  <option>Mandado de Recolhimento</option>
-                  <option>Ofício de Transferência</option>
-                  <option>Prisão Temporária</option>
-                  <option>Outro</option>
-                </select>
-            </div>
-
-            <div class="form-group"> <!--Crime de Repercussão-->
-                <label>Crime de Repercussão</label>
-                <select class="form-control" style="width: 90px" name="crimerepercurssao"><!-- 'name=' adicionado-->
-                  <option>Sim</option>
-                  <option>Não</option>
-                </select>
-            </div>
-
-            <div class="form-group"> <!--Observações-->
-                  <label>Observações Gerais</label>
-                  <textarea class="form-control" rows="5" name="observacoesgerais" placeholder="Observações"></textarea><!-- 'name=' adicionado-->
-            </div>
-
-            <br>
-
-            <div class="col-xs-2"> <!--Botão Cadastrar-->
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button><!--Botão atualizado pq não estav fazendo o 'submit'-->
-            </div>
-
-          </form>
-          <!--Fim do Formulario-->
-        </div>
-        <!-- Fim do Box Body -->
+     <div class="row">
+       <div class="col-xs-12">
+         <div class="box">
+           <div class="box-header">
+             <h3 class="box-title"> Lista de Agentes </h3>
+             <a href="<?php echo site_url('Agente/cadastro'); ?>" class="btn btn-primary btn-xs pull-right">Cadastrar</a>
+           </div>
+           <!-- /.box-header -->
+           <div class="box-body">
+             <table id="example2" class="table table-bordered table-hover">
+               <thead>
+               <tr>
+                    <th>Nome Completo</th>
+                    <th>Matricula</th>
+                    <th>Núcleo</th>
+                    <th>Unidade Prisional</th>
+                    <th>Email Institucional</th>
+                    <th>Login</th>
+                    <th>Senha</th>
+                    <th>Função</th>
+                    <th>Funcionário Ativo</th>
+                </tr>
+               </thead>
+               <tbody>
+                    <?php foreach($agent as $agents) : ?>
+                        <tr>
+                            <td><?= $agents['nomecompleto']?></td>
+                            <td><?= $agents['matricula']?></td>
+                            <td><?= $agents['nucleo']?></td>
+                            <td><?= $agents['unidadeprisional']?></td>
+                            <td><?= $agents['emailinstitucional']?></td>
+                            <td><?= $agents['login']?></td>
+                            <td><?= $agents['senha']?></td>
+                            <td><?= $agents['funcao']?></td>
+                            <td><?= $agents['funcionarioativo']?></td>
+                        
+                            <td>
+                                <a href="#" class="btn btn-warning btn-xs">Editar</a>
+                            </td>
+                        </tr>
+                    <?php endforeach;?>
+               </tbody>
+             </table>
+           </div>
+           <!-- /.box-body -->
+         </div>
+         <!-- /.box -->
+       </div>
+        <!-- /.col -->
       </div>
-      <!-- Fim do Box -->
+      <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
@@ -310,6 +243,9 @@
 <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url(); ?>assets/datatables.net-bs/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="<?php echo base_url(); ?>assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
@@ -321,8 +257,16 @@
 <!--Font Awesome My Link-->
 <script src="https://kit.fontawesome.com/3db1420b56.js" crossorigin="anonymous"></script>
 <script>
-  $(document).ready(function () {
-    $('.sidebar-menu').tree();
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
   })
 </script>
 </body>
