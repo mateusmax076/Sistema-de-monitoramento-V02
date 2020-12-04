@@ -10,19 +10,19 @@ class cadastrar_sair_model extends CI_Model{
         $data = array(
             'cadeiapublica'=> $this->input->post('cadeiapublica'), //Recebe os dados via post
             'datasaida'=> $this->input->post('datasaida'),
-            'processo'=> $this->input->post('processo'),
-            'siap'=> $this->input->post('siap'),
+            'numprocesso'=> $this->input->post('numprocesso'),
+            'numsiap'=> $this->input->post('numsiap'),
             'sic'=> $this->input->post('sic'),
             'nome'=> $this->input->post('nome'),
-            'nomemae'=> $this->input->post('nomemae'),
-            'nomepai'=> $this->input->post('nomepai'),
+            'mae'=> $this->input->post('mae'),
+            'pai'=> $this->input->post('pai'),
             'motivo'=> $this->input->post('motivo'),
             'origem'=> $this->input->post('origem'),
             'documentacao'=> $this->input->post('documentacao'),
             'crimerepercurssao'=> $this->input->post('crimerepercurssao'),
-            'observacoesgerais'=> $this->input->post('observacoesgerais')
+            'obs'=> $this->input->post('obs')
         );
-        $this->db->insert('cadastrar_sair', $data);
+        $this->db->insert('tbl_saidadetentos', $data);
 
     }
 
@@ -33,7 +33,7 @@ function get_cadastrar_sair_like ()  {    //fazer pesquisar
     $termo = $this->input->post('pesquisar');
       $this->db->select('*');
       $this->db->like ('nome',$termo);
-     return $this->db->get('cadastrar_sair')->result();
+     return $this->db->get('tbl_saidadetentos')->result();
 		
 
 	}

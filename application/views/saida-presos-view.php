@@ -199,14 +199,14 @@
                </tr>
                </thead>
                <tbody>
-               <?php foreach ($cadastrar_sair as $res) { ?>
+               <?php foreach ($tbl_saidadetentos as $res) { ?>
                  <tr>
                  <td><?= $res->id; ?></td> 
                    <td><?= $res->cadeiapublica; ?></td> 
                    <td> <?= $res->nome; ?></td>
-                   <td><?= $res->nomemae; ?> </td>
-                   <td><?= $res->nomepai; ?> </td>
-                   <td><?= $res->siap; ?> </td>
+                   <td><?= $res->mae; ?> </td>
+                   <td><?= $res->pai; ?> </td>
+                   <td><?= $res->numsiap; ?> </td>
                    <td>
                      <a href="<?= base_url('Edicao_sair',$res->id) ?>" class="btn btn-warning btn-xs">Editar</a>
                    </td>

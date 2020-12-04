@@ -14,7 +14,7 @@ class Edicao_sair extends CI_Controller{
         
         $this->load->model('Edicao_sair_model');//carregando o model dos presos
         $this->db->where('id',$id);
-        $data ['cadastrar_sair'] = $this->db->get('cadastrar_sair')->result();
+        $data ['tbl_saidadetentos'] = $this->db->get('tbl_saidadetentos')->result();
         $this->load->view('editar_cadastro_sair_view',$data);   //Carrega a view de cadastro do agente
 
 

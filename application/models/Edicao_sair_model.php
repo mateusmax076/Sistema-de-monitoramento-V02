@@ -11,20 +11,20 @@ class Edicao_sair_model extends CI_Model{
         $data = array(
             'cadeiapublica'=> $this->input->post('cadeiapublica'), //Recebe os dados via post
             'datasaida'=> $this->input->post('datasaida'),
-            'processo'=> $this->input->post('processo'),
-            'siap'=> $this->input->post('siap'),
+            'numprocesso'=> $this->input->post('numprocesso'),
+            'numsiap'=> $this->input->post('numsiap'),
             'sic'=> $this->input->post('sic'),
             'nome'=> $this->input->post('nome'),
-            'nomemae'=> $this->input->post('nomemae'),
-            'nomepai'=> $this->input->post('nomepai'),
+            'mae'=> $this->input->post('mae'),
+            'pai'=> $this->input->post('pai'),
             'motivo'=> $this->input->post('motivo'),
             'origem'=> $this->input->post('origem'),
             'documentacao'=> $this->input->post('documentacao'),
             'crimerepercurssao'=> $this->input->post('crimerepercurssao'),
-            'observacoesgerais'=> $this->input->post('observacoesgerais')
+            'obs'=> $this->input->post('obs')
         );
         $this->db->where('id',$id);
-        $this->db->update('cadastrar_sair', $data);
+        $this->db->update('tbl_saidadetentos', $data);
 
     }
 

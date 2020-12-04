@@ -199,7 +199,7 @@
           				<option>CP de Vicência</option>
           			</select>
           	</div>
-
+      
             <div class="form-group">
               <label>Data de Saida</label>
               <input type="text" class="form-control" name="datasaida" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
@@ -212,17 +212,17 @@
 
           	<div class="form-group"> <!-- Nome da Mãe-->
           		<label>Nome da Mãe</label>
-          		<input type="text" class="form-control" name="nomemae" placeholder="Nome da Mãe" style="width:300px"><!-- 'name=' adicionado-->
+          		<input type="text" class="form-control" name="mae" placeholder="Nome da Mãe" style="width:300px"><!-- 'name=' adicionado-->
           	</div>
 
           	<div class="form-group"> <!-- Nome do Pai-->
           		<label>Nome do Pai</label>
-          		<input type="text" class="form-control" name="nomepai" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
+          		<input type="text" class="form-control" name="pai" placeholder="Nome" style="width:300px"><!-- 'name=' adicionado-->
           	</div>
 
             <div class="form-group"> <!-- Nome do Detento-->
           		<label>SIAP</label>
-          		<input type="text" class="form-control" name="siap" placeholder="SIAP" style="width:300px"><!-- 'name=' adicionado-->
+          		<input type="text" class="form-control" name="numsiap" placeholder="SIAP" style="width:300px"><!-- 'name=' adicionado-->
           	</div>
 
           	<div class="form-group"> <!-- Nome do Detento-->
@@ -232,7 +232,7 @@
 
             <div class="form-group"> <!-- Nome do Detento-->
           		<label>PROCESSO</label>
-          		<input type="text" class="form-control" name="processo" placeholder="PROCESSO" style="width:300px"><!-- 'name=' adicionado-->
+          		<input type="text" class="form-control" name="numprocesso" placeholder="PROCESSO" style="width:300px"><!-- 'name=' adicionado-->
           	</div>
 
 
@@ -288,7 +288,7 @@
 
             <div class="form-group"> <!--Observações-->
                   <label>Observações Gerais</label>
-                  <textarea class="form-control" rows="5" name="observacoesgerais" placeholder="Observações"></textarea><!-- 'name=' adicionado-->
+                  <textarea class="form-control" rows="5" name="obs" placeholder="Observações"></textarea><!-- 'name=' adicionado-->
             </div>
              
             <br>

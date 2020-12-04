@@ -202,14 +202,14 @@
    </tr>
    </thead>
    <tbody>
-   <?php foreach ($SaidapresosAudiencia as $res) { ?>
+   <?php foreach ($tbl_saidaaudiencia as $res) { ?>
      <tr>
      <td><?= $res->id; ?></td> 
        <td><?= $res->cadeiapublica; ?></td> 
        <td> <?= $res->nome; ?></td>
-       <td><?= $res->siap; ?> </td>
+       <td><?= $res->numsiap; ?> </td>
        <td><?= $res->sic; ?> </td>
-       <td><?= $res->dataentrada; ?> </td>
+       <td><?= $res->data; ?> </td>
        <td><?= $res->condutores; ?> </td>
        <td>
          <a href="<?= base_url('Edicao_sair') ?>" class="btn btn-warning btn-xs">Editar</a>

@@ -5,7 +5,7 @@ class Saidapresos extends CI_Controller{
 
     public function index(){
         $this->db->select('*');
-        $dados['cadastrar_sair'] = $this->db->get('cadastrar_sair')->result();
+        $dados['tbl_saidadetentos'] = $this->db->get('tbl_saidadetentos')->result();
         $this->load->view('Saida-presos-view',$dados);
 
 
@@ -15,13 +15,13 @@ class Saidapresos extends CI_Controller{
 
     
 	public function usuarios(){
-		return $this->db->get('cadastrar_sair')->result_array();
+		return $this->db->get('tbl_saidadetentos')->result_array();
 	}
      
     public function pesquisar(){
         
-        $this->load->model('cadastrar_sair_model','cadastrar_sair');
-        $dados['cadastrar_sair'] = $this->cadastrar_sair->get_cadastrar_sair_like();
+        $this->load->model('cadastrar_sair_model','tbl_saidadetentos');
+        $dados['tbl_saidadetentos'] = $this->cadastrar_sair->get_cadastrar_sair_like();
         $this->load->view('Saida-presos-view',$dados);
      
         

@@ -202,7 +202,7 @@
 
             <div class="form-group">
               <label>Data de Entrada</label>
-              <input type="text" class="form-control" name="dataentrada" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
+              <input type="text" class="form-control" name="data" placeholder="dd/mm/aaaa" style="width:140px" maxlength="10"><!-- 'name=' adicionado-->
               </div>
 
           	<div class="form-group"> <!-- Nome do Detento-->
@@ -212,7 +212,7 @@
 
           	<div class="form-group"> <!-- Nome da Mãe-->
           		<label>Nº SIAP</label>
-          		<input type="text" class="form-control" name="siap" placeholder="Nº SIAP" style="width:300px"><!-- 'name=' adicionado-->
+          		<input type="text" class="form-control" name="numsiap" placeholder="Nº SIAP" style="width:300px"><!-- 'name=' adicionado-->
           	</div>
 
           	<div class="form-group"> <!-- Nome do Pai-->
@@ -222,7 +222,7 @@
 
               <div class="form-group"> <!-- Nome do Pai-->
           		<label>Cidade - Fórum</label>
-          		<input type="text" class="form-control" name="cidade" placeholder="Cidade - Fórum" style="width:300px"><!-- 'name=' adicionado-->
+          		<input type="text" class="form-control" name="cidade-forum" placeholder="Cidade - Fórum" style="width:300px"><!-- 'name=' adicionado-->
           	</div>
 
               <div class="form-group"> <!-- Nome do Pai-->
